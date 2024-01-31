@@ -37,7 +37,7 @@ app.get('/books/: id', (req, res) => {
  });
 });
     
-app.put('/books', (req, res) => {
+app.post('/books', (req, res) => {
     const book = req.body;
     db.run('INSERT INTO books (title, author) VALUES (?, ?)', book.title, book.author, function(err) {
     if (err) {
